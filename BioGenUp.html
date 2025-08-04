@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BioGenUp</title>
+  <meta name="description" content="Learn, research, and grow with our hands‑on biotechnology internship program." />
+  <meta name="keywords" content="biotech, biotechnology, internship, research training, life sciences" />
+  <meta name="author" content="Your Organization" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    /* Extend Tailwind theme inline */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1E3A8A',   // deep brand blue (tailwind blue-800 vibe)
+              light: '#3B82F6',  // accent blue (blue-500)
+              grey: '#6B7280',   // neutral grey (gray-500)
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><circle cx=%2750%27 cy=%2750%27 r=%2740%27 fill=%27%231E3A8A%27 /></svg>" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Biotech Internship Program" />
+  <meta property="og:description" content="Hands‑on lab experience, mentorship, and mini‑research projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://example.org/biotech-internship" />
+</head>
+<body class="font-sans antialiased text-gray-800 bg-white selection:bg-brand-light/20">
+
+<!-- ========================================================= -->
+<!-- Skip Link -->
+<!-- ========================================================= -->
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-4 focus:rounded focus:bg-brand.light focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
+
+<!-- ========================================================= -->
+<!-- Header / Nav -->
+<!-- ========================================================= -->
+<header class="sticky top-0 z-40 w-full bg-white/90 backdrop-blur shadow-sm">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-2 group">
+        <span class="block h-8 w-8 rounded-full bg-brand-blue group-hover:bg-brand-light transition-colors"></span>
+        <span class="text-lg font-bold text-brand-blue tracking-tight">BioGenUp</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-brand-light transition-colors">About</a>
+        <a href="#eligibility" class="hover:text-brand-light transition-colors">Eligibility</a>
+        <a href="#projects" class="hover:text-brand-light transition-colors">Projects</a>
+        <a href="#mentors" class="hover:text-brand-light transition-colors">Mentors</a>
+        <a href="#faq" class="hover:text-brand-light transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-brand-light transition-colors">Contact</a>
+        <a href="#apply" class="inline-block rounded-md bg-brand-blue px-4 py-2 text-white hover:bg-brand-light transition-colors">Apply</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" aria-controls="mobile-menu" aria-expanded="false" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-brand-blue hover:bg-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-light">
+        <span class="sr-only">Open main menu</span>
+        <!-- Icon: Hamburger -->
+        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Icon: Close (hidden by default) -->
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile Nav Panel -->
+  <nav id="mobile-menu" class="md:hidden hidden border-t border-gray-200 bg-white" role="navigation">
+    <div class="space-y-1 px-4 py-4 text-base">
+      <a href="#about" class="block rounded px-3 py-2 hover:bg-brand-blue/10">About</a>
+      <a href="#eligibility" class="block rounded px-3 py-2 hover:bg-brand-blue/10">Eligibility</a>
+      <a href="#projects" class="block rounded px-3 py-2 hover:bg-brand-blue/10">Projects</a>
+      <a href="#mentors" class="block rounded px-3 py-2 hover:bg-brand-blue/10">Mentors</a>
+      <a href="#faq" class="block rounded px-3 py-2 hover:bg-brand-blue/10">FAQ</a>
+      <a href="#contact" class="block rounded px-3 py-2 hover:bg-brand-blue/10">Contact</a>
+      <a href="#apply" class="mt-2 block rounded-md bg-brand-blue px-3 py-2 text-center text-white hover:bg-brand-light">Apply</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <!-- ======================================================= -->
+  <!-- Hero -->
+  <!-- ======================================================= -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-brand-blue to-brand-light text-white">
+    <div class="absolute inset-0 opacity-10" aria-hidden="true">
+      <!-- Decorative DNA strands using SVG -->
+      <svg class="absolute -left-10 top-10 h-64 w-64" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 20c60 40 100 120 160 160" />
+        <path d="M180 20c-60 40-100 120-160 160" />
+      </svg>
+      <svg class="absolute right-0 bottom-0 h-64 w-64" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M20 20c60 40 100 120 160 160" />
+        <path d="M180 20c-60 40-100 120-160 160" />
+      </svg>
+    </div>
+    <div class="relative mx-auto max-w-3xl px-4 py-32 text-center sm:py-40">
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Biotech Internship Program</h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg text-blue-100">Hands‑on lab skills, real research mini‑projects, one‑to‑one mentorship, and a launching pad for your biotech career.</p>
+      <div class="mt-10 flex flex-col sm:flex-row sm:justify-center gap-4">
+        <a href="#apply" class="rounded-md bg-white px-8 py-3 text-base font-medium text-brand-blue hover:bg-gray-100">How to Apply</a>
+        <a href="#about" class="rounded-md border border-white/60 px-8 py-3 text-base font-medium text-white hover:bg-white/10">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- About -->
+  <!-- ======================================================= -->
+  <section id="about" class="py-24 bg-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">About the Program</h2>
+        <p class="mt-6 text-lg text-gray-600">Our Biotech Internship is an intensive short‑term training pathway designed for students and early‑career learners who want practical exposure to modern laboratory methods, data analysis, and biotechnology research culture. Over 8 weeks, interns rotate through skill modules, complete a guided mini‑project, and present their findings.</p>
+        <ul class="mt-8 space-y-3 text-gray-700 list-disc list-inside">
+          <li>Wet lab basics: pipetting, aseptic technique, culture handling.</li>
+          <li>Molecular biology workflows: DNA isolation, PCR, gel analysis.</li>
+          <li>Data literacy: basic bioinformatics & visualization.</li>
+          <li>Career mentoring & graduate study guidance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- Eligibility -->
+  <!-- ======================================================= -->
+  <section id="eligibility" class="py-24 bg-gray-50">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">Eligibility</h2>
+          <p class="mt-6 text-lg text-gray-600">We welcome motivated learners from life‑science backgrounds. You do <strong>not</strong> need prior lab experience—just curiosity and commitment.</p>
+          <ul class="mt-8 space-y-3 text-gray-700 list-disc list-inside">
+            <li>Current student or graduate in biotech, biology, biochem, pharmacy, or related fields.</li>
+            <li>Basic understanding of cell & molecular biology concepts.</li>
+            <li>Comfort with following lab safety instructions.</li>
+            <li>Ability to commit to the full internship duration.</li>
+          </ul>
+        </div>
+        <div class="mt-16 lg:mt-0">
+          <div class="rounded-lg bg-white p-8 shadow-md border border-gray-100">
+            <h3 class="text-xl font-semibold text-brand-blue">Quick Facts</h3>
+            <dl class="mt-6 space-y-4 text-gray-700">
+              <div class="flex justify-between"><dt>Duration:</dt><dd>8 weeks (track dependent)</dd></div>
+              <div class="flex justify-between"><dt>Format:</dt><dd>Virtual Classes + Seminars</dd></div>
+              <div class="flex justify-between"><dt>Seats:</dt><dd>Limited (apply early)</dd></div>
+              <div class="flex justify-between"><dt>Certificate:</dt><dd>Yes (performance‑based)</dd></div>
+            </dl>
+            <div class="mt-8 text-center">
+              <a href="#apply" class="inline-block rounded-md bg-brand-blue px-6 py-2 text-white hover:bg-brand-light">Applications Closed</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- Projects -->
+  <!-- ======================================================= -->
+  <section id="projects" class="py-24 bg-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">Sample Mini‑Projects</h2>
+        <p class="mt-6 text-lg text-gray-600">Interns work in small teams with mentor guidance. Projects change each cohort—here are examples.</p>
+      </div>
+
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">CRISPR Target Analysis (in‑silico)</h3>
+          <p class="mt-3 text-gray-700 text-sm">Use genome databases to identify candidate CRISPR guide sites and evaluate off‑target risk.</p>
+        </article>
+        <!-- Card 2 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">PCR Detection of GMO Markers</h3>
+          <p class="mt-3 text-gray-700 text-sm">Design primers, amplify target sequences, and visualize results on agarose gel.</p>
+        </article>
+        <!-- Card 3 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">Microbial Growth Curves</h3>
+          <p class="mt-3 text-gray-700 text-sm">Measure OD600 over time to model growth kinetics under different nutrient conditions.</p>
+        </article>
+        <!-- Card 4 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">Protein Expression & SDS‑PAGE</h3>
+          <p class="mt-3 text-gray-700 text-sm">Induce recombinant protein expression, purify, and analyze band pattern.</p>
+        </article>
+        <!-- Card 5 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">Basic Sequence Alignment Workshop</h3>
+          <p class="mt-3 text-gray-700 text-sm">Compare gene sequences and interpret alignment scores with BLAST.</p>
+        </article>
+        <!-- Card 6 -->
+        <article class="group rounded-lg border border-gray-200 bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="text-xl font-semibold text-brand-blue group-hover:text-brand-light">Intro to Bioinformatics Pipelines</h3>
+          <p class="mt-3 text-gray-700 text-sm">Get a taste of NGS data QC and simple variant calling workflow (demo dataset).</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- Mentors -->
+  <!-- ======================================================= -->
+  <section id="mentors" class="py-24 bg-gray-50">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">Meet the Mentors</h2>
+        <p class="mt-6 text-lg text-gray-600">Experienced researchers, faculty, and industry scientists guide you through the journey.</p>
+      </div>
+
+      <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Mentor Card Template -->
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-4xl font-bold">AN</div>
+          <h3 class="mt-4 text-xl font-semibold text-brand-blue">Dr. Arvind Nair</h3>
+          <p class="mt-1 text-sm text-gray-600">Molecular Genetics Lab</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-4xl font-bold">RS</div>
+          <h3 class="mt-4 text-xl font-semibold text-brand-blue">Dr. Rajeev Sharma</h3>
+          <p class="mt-1 text-sm text-gray-600">Industrial Biotech & Fermentation</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-4xl font-bold">NK</div>
+          <h3 class="mt-4 text-xl font-semibold text-brand-blue">Dr. Nandita Kripalani</h3>
+          <p class="mt-1 text-sm text-gray-600">Bioinformatics & Data</p>
+        </div>
+        <div class="text-center">
+          <div class="mx-auto h-32 w-32 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue text-4xl font-bold">CL</div>
+          <h3 class="mt-4 text-xl font-semibold text-brand-blue">Dr. Charu Lakhani</h3>
+          <p class="mt-1 text-sm text-gray-600">CRISPR Technology</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- Application Timeline / Steps -->
+  <!-- ======================================================= -->
+  <section id="apply" class="py-24 bg-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">Apply in 4 Steps</h2>
+        <p class="mt-6 text-lg text-gray-600">The process is quick. Seats are limited, so don’t wait.</p>
+      </div>
+
+      <ol class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+        <li class="relative">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue text-white text-2xl font-bold">1</div>
+          <h3 class="mt-4 font-semibold text-brand-blue">Fill Form</h3>
+          <p class="mt-2 text-sm text-gray-600">Basic details & academic background.</p>
+        </li>
+        <li class="relative">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue text-white text-2xl font-bold">2</div>
+          <h3 class="mt-4 font-semibold text-brand-blue">Upload Docs</h3>
+          <p class="mt-2 text-sm text-gray-600">Resume + short motivation (PDF).</p>
+        </li>
+        <li class="relative">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue text-white text-2xl font-bold">3</div>
+          <h3 class="mt-4 font-semibold text-brand-blue">Interview</h3>
+          <p class="mt-2 text-sm text-gray-600">Short call to discuss goals.</p>
+        </li>
+        <li class="relative">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-brand-blue text-white text-2xl font-bold">4</div>
+          <h3 class="mt-4 font-semibold text-brand-blue">Offer</h3>
+          <p class="mt-2 text-sm text-gray-600">Accept & confirm your seat.</p>
+        </li>
+      </ol>
+
+      <!-- Static Application CTA -->
+      <div class="mt-16 max-w-md mx-auto">
+        <a href="mailto:biotechgenup@gmail.com?subject=Biotech%20Internship%20Application" class="block w-full rounded-md bg-brand-blue px-8 py-4 text-center font-semibold text-white hover:bg-brand-light">Applications Closed! (Email)</a>
+        <p class="mt-2 text-center text-xs text-gray-500">You can still email us!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- FAQ -->
+  <!-- ======================================================= -->
+  <section id="faq" class="py-24 bg-gray-50">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl text-center">Frequently Asked Questions</h2>
+      <div class="mt-12 divide-y divide-gray-200" id="faq-accordion">
+        <!-- FAQ Item Template -->
+        <div class="py-4">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4" aria-expanded="false">
+            <span class="font-medium text-brand-blue">Do I need prior experience?</span>
+            <span class="ml-4 flex-none text-brand-blue">+</span>
+          </button>
+          <div class="faq-panel hidden mt-2 text-gray-700 text-sm">No. We start fresh from core skills; motivation matters more than prior experience.</div>
+        </div>
+        <div class="py-4">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4" aria-expanded="false">
+            <span class="font-medium text-brand-blue">Is there a fee?</span>
+            <span class="ml-4 flex-none text-brand-blue">+</span>
+          </button>
+          <div class="faq-panel hidden mt-2 text-gray-700 text-sm">Some tracks include consumable and bench fees. Scholarships may be available; please indicate need in your application.</div>
+        </div>
+        <div class="py-4">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4" aria-expanded="false">
+            <span class="font-medium text-brand-blue">Will I get a certificate?</span>
+            <span class="ml-4 flex-none text-brand-blue">+</span>
+          </button>
+          <div class="faq-panel hidden mt-2 text-gray-700 text-sm">Yes, participants who complete required modules and present a project will receive a certificate of completion.</div>
+        </div>
+        <div class="py-4">
+          <button class="faq-toggle w-full text-left flex items-center justify-between gap-4" aria-expanded="false">
+            <span class="font-medium text-brand-blue">Can international students apply?</span>
+            <span class="ml-4 flex-none text-brand-blue">+</span>
+          </button>
+          <div class="faq-panel hidden mt-2 text-gray-700 text-sm">Yes. Remote seminar participation is possible;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- Contact -->
+  <!-- ======================================================= -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-brand-blue sm:text-4xl">Contact Us</h2>
+        <p class="mt-4 text-gray-600">Questions? Reach out and we'll respond within 2 business days.</p>
+      </div>
+      <div class="mt-12 max-w-lg mx-auto">
+        <!-- Static contact form (no backend) -->
+        <form id="contact-form" class="space-y-6" onsubmit="return handleContactSubmit(event)">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-light focus:ring-brand-light" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-light focus:ring-brand-light" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand-light focus:ring-brand-light"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="w-full rounded-md bg-brand-blue px-6 py-3 font-semibold text-white hover:bg-brand-light">Send Message</button>
+          </div>
+        </form>
+        <p id="contact-confirm" class="mt-4 hidden text-center text-sm text-brand-blue font-medium">Thanks!</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================= -->
+<!-- Footer -->
+<!-- ========================================================= -->
+<footer class="bg-gray-100 py-12 text-sm text-gray-600">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 grid gap-8 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <h3 class="text-base font-semibold text-brand-blue">BioIntern</h3>
+      <p class="mt-2 max-w-xs">Accessible biotech training for the next generation of researchers.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-800">Program</h4>
+      <ul class="mt-2 space-y-1">
+        <li><a href="#about" class="hover:text-brand-light">About</a></li>
+        <li><a href="#eligibility" class="hover:text-brand-light">Eligibility</a></li>
+        <li><a href="#projects" class="hover:text-brand-light">Projects</a></li>
+        <li><a href="#mentors" class="hover:text-brand-light">Mentors</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold text-gray-800">Apply</h4>
+      <ul class="mt-2 space-y-1">
+        <li><a href="#apply" class="hover:text-brand-light">How to Apply</a></li>
+        <li><a href="mailto:biotechgenup@gmail.com?subject=Biotech%20Internship%20Application" class="hover:text-brand-light">Email Application</a></li>
+        <li><a href="#faq" class="hover:text-brand-light">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mt-12 border-t border-gray-300 pt-6 text-center text-xs text-gray-500">© <span id="year"></span> BioIntern. All rights reserved.</div>
+</footer>
+
+<!-- ========================================================= -->
+<!-- Scripts -->
+<!-- ========================================================= -->
+<script>
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  mobileBtn?.addEventListener('click', () => {
+    const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+    mobileBtn.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu.classList.toggle('hidden');
+    iconMenu.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+
+  // Simple FAQ accordion
+  document.querySelectorAll('#faq-accordion .faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.parentElement.querySelector('.faq-panel');
+      const isOpen = !panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.querySelector('span:last-child').textContent = isOpen ? '+' : '–';
+    });
+  });
+
+  // Contact form stub -> opens mailto draft with form data
+  function handleContactSubmit(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const msg = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent('Biotech Internship Inquiry from ' + name);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+    window.location.href = `mailto:biotechgenup@gmail.com?subject=${subject}&body=${body}`;
+    document.getElementById('contact-confirm').classList.remove('hidden');
+    return false;
+  }
+
+  // Year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
